@@ -48,6 +48,7 @@ control sockets
   tunnels
     ssh student@jump -L 2222:target:22
       opens 2222 port on your machine leading to port 22 on the tagret machine
+    ssh student23@127.0.0.1 -D 9050
   ssh -M -S /tmp/jump -o StrictHostKeyChecking=no -o UserknownHostsFile=/dev/null student23@10.50.43.159
     (ssh make socket in /tmp called jump, tell ssh to stop being a bitch with the two -o's (turns off key checking) for the user student23 on 10.50.43.159
   ssh -S /tmp/jump user@ip
@@ -56,7 +57,12 @@ control sockets
   ssh -S /tmp/jump user@ip -O forward -L 2222:192.168.0.10:22
     -O means options THAT'S when you put in your tunnel options, if nothing pops up, something happened
   ***DON'T KILL ORIGINAL SESSION OR IT ALL GOES AWAY***
-ssh -M -S /tmp/T2 -p 2222 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student12@127.0.0.1
-  can use scp with ssh sockets
-    scp -o ControlPath=/tmp/jump user@ip:/etc/passwd /tmp/passwd
-      similar to regular scp syntax, you just have to use -o and set the controlpath to the name of your socket
+  ssh -M -S /tmp/T2 -p 2222 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student12@127.0.0.1
+    can use scp with ssh sockets
+      scp -o ControlPath=/tmp/jump user@ip:/etc/passwd /tmp/passwd
+        similar to regular scp syntax, you just have to use -o and set the controlpath to the name of your socket
+  ssh -S /tmp/jump user@ip -O forward -D 9050
+    creates a dynamic tunnel/port forward
+  proxychains nmap -pN -sT -p 80 192.168.0.10 2>/dev/null
+  ssh -S /tmp/jump user@ip -O cancel -D 9050
+    kils the dynamic. can use to kill any of them but just change forward to cancel in other tunnels
