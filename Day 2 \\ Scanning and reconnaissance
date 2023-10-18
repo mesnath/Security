@@ -31,3 +31,32 @@ advanced scanning techniques
       backdoor detection
       vulnerability exploitation
       /usr/share/nmap/scripts on linops
+
+data collection through scraping - demo notes
+  insertNotesHere
+
+advanced scanning techniques - demo notes
+  cat /usr/share/nmap/scripts/weblogic-t3-info.nse
+  nmap --script-help http-enum
+  nmap --script http-enum 10.50.45.252
+    add what need to notes
+
+nmap familiarization - demo notes
+  nmap --help
+
+control sockets
+  tunnels
+    ssh student@jump -L 2222:target:22
+      opens 2222 port on your machine leading to port 22 on the tagret machine
+  ssh -M -S /tmp/jump -o StrictHostKeyChecking=no -o UserknownHostsFile=/dev/null student23@10.50.43.159
+    (ssh make socket in /tmp called jump, tell ssh to stop being a bitch with the two -o's (turns off key checking) for the user student23 on 10.50.43.159
+  ssh -S /tmp/jump user@ip
+    connect to user on ip for jump with the socket we made earlier
+    you don't have to have a specific user@ip, just need to have SOMETHIng in the destination spot for ssh or syntax has an aneurysm
+  ssh -S /tmp/jump user@ip -O forward -L 2222:192.168.0.10:22
+    -O means options THAT'S when you put in your tunnel options, if nothing pops up, something happened
+  ***DON'T KILL ORIGINAL SESSION OR IT ALL GOES AWAY***
+ssh -M -S /tmp/T2 -p 2222 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student12@127.0.0.1
+  can use scp with ssh sockets
+    scp -o ControlPath=/tmp/jump user@ip:/etc/passwd /tmp/passwd
+      similar to regular scp syntax, you just have to use -o and set the controlpath to the name of your socket
