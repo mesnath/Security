@@ -1,0 +1,33 @@
+"produced from publicly available information that is collected, exploited, and disseminated in a timely manner to an appropriate audience or addressing a specific intelligence requirement"
+"todays scans will build tomorrow ops"
+
+data to collect
+  web data
+    cached content, analytics, proxy web application, command line interrogation
+  sensitive data
+    business data, profiles, non-profits/charities, business filings, historical and public listings
+  publicly accessible
+    physical addresses, phone numbers, emails, usernames, search engine data, web and traffic cameras, wireless access point data
+  social media
+    twitter, facebook, instagram, people searches, registry and wish lists
+  domain and ip data
+    dns registration, IP address assignmnets, geolocation data, whois
+advanced scanning techniques
+  host discovery
+    find hosts that are onlin
+    ping sweeps, etc
+  port enumeration
+    find ports for each host that is online
+    posrt scans
+  port interrogation
+    find what service (and versions of the services) is running on each open/available port
+  nmap scripting engine
+    uses more advanced/nuanced applications of nmap
+    can be a very noisy
+    main benefits:
+      network discovery
+      sophisticated version detection
+      vulnerability detection
+      backdoor detection
+      vulnerability exploitation
+      /usr/share/nmap/scripts on linops
