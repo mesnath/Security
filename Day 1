@@ -1,1 +1,25 @@
 Pen testing overview:
+
+PHASE 1 - Mission Definition - what you can and can't do
+  define mission goals and targets
+  determine scope of mission
+  define RoE  
+PHASE 2 - RECON
+  information gathering about the target through public sources
+PHASE 3 - Footprinting
+  accumulate data through scanning and/or interaction with the target/target resources
+  first time you actually touch the target
+  banner grabbing, host scans and shit like that
+Phase 4 - Exploitation & Initial access
+  gain an initial foothold on the network
+  sometimes bypassed
+Phase 5 - Post-Exploitation
+  establish persistence
+  escalate privileges
+  cover your tracs
+  exfiltrate target data
+Phase 6 - Document Mission
+  Document and report mission details
+    pen test reposrting
+      operation notes (OPNOTES) vs Formalized Reporting
+        formalized has less technical speak while OPNOTES are like your live journal
