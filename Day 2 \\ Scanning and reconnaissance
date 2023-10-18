@@ -33,7 +33,7 @@ advanced scanning techniques
       /usr/share/nmap/scripts on linops
 
 data collection through scraping - demo notes
-  insertNotesHere
+  python scraper.py https://quotes.toscrape.com
 
 advanced scanning techniques - demo notes
   cat /usr/share/nmap/scripts/weblogic-t3-info.nse
@@ -66,3 +66,6 @@ control sockets
   proxychains nmap -pN -sT -p 80 192.168.0.10 2>/dev/null
   ssh -S /tmp/jump user@ip -O cancel -D 9050
     kils the dynamic. can use to kill any of them but just change forward to cancel in other tunnels
+
+bash ping sweep
+  for i in {1..254} ;do (ping -c 1 192.16.1.$i | grep "bytes from" &) ;done
