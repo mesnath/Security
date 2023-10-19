@@ -2,3 +2,5 @@ ssh -MS /tmp/gray student@10.50.2721.182
 ssh -S /tmp/gray gray -O cancel -L 1899:192.168.28.111:8080
 ssh -S /tmp/gray gray -O forward -L 1898:192.168.28.111:22
 ssh -S /tmp/gray gray -O forward -D9050
+
+websites on ports 80 and 8080
