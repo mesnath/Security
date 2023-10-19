@@ -1,0 +1,4 @@
+ssh -S /tmp/gray gray -O forward -L 1988:10.100.28.40:4444
+ssh -S /tmp/gray gray -O forward -L 1899:10.100.28.40:80
+ssh billybob@localhost -p1988 -L 1799:10.100.28.55:80
+ssh -S /tmp/gray gray -O forward -D9050
