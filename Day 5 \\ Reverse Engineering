@@ -1,0 +1,39 @@
+X86_64 assembly - common terms
+  heap
+    Memory that can be allocated and deallocated
+  stack
+    A contiguous section of memory used for passing arguments
+  general register
+    A multipurpose register that can be used by either programmer or user to store data or a memory location address
+  control register
+    A processor register that changes or controls the behavior of a CPU
+  flags register
+    Contains the current state of the processor
+x86_64 assembly - Memory offset
+  64 Bit  |   Lower 32 bits  |  Lower 16 bits  |  Description
+----------|------------------|-----------------|--------------
+    RIP   |         EIP      |       IP        |   Instruction poiner, holds addressfor next instruction to be executed
+
+X86_64 Assembly - Common Instruction Pointers
+  MOV
+    move source to destination
+  PUSH
+    push source onto stack
+  POP
+    Pop top of stack to destination
+  INC
+    Increment source by 1
+  DEC
+    Decrement source by 1
+  ADD
+    Add source to destination
+  SUB
+    Subtract source from destination
+  CMP
+    Compare 2 values by subtracting them and setting the %RFLAGS register. ZeroFlag set means they are the same.
+  JMP
+    jump to specified location
+  JLE  
+    jump if less than or equal
+  JE
+    jump if equal
