@@ -20,7 +20,12 @@ Privilege Escalation
         means you can do a lot
     impoperly configured cron jobs
       cron jobs can be set up to open/run applications or commands as root
+      https://crontab.guru
     vulnerable services
       similar to cron jobs
+      check systemd for services
     kernel exploits
-      wall hacks
+      wall hacks if defender doesn't keep their shit updated
+    World-Writable Files and Folders
+      $PATH=$PATH+/insert/directory
+      don't even bother it's retarded
