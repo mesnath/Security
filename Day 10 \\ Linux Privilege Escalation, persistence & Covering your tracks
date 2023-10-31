@@ -5,6 +5,7 @@ Persistence
     adding or modifying a CRON job
     adding a kernel module (with a backdoor)
     additional methods outside the scope of the SG
+
 Privilege Escalation
   enumerating for privilege escalation
     sudo -l
@@ -29,3 +30,49 @@ Privilege Escalation
     World-Writable Files and Folders
       $PATH=$PATH+/insert/directory
       don't even bother it's retarded
+
+BIG ONES ARE USERS, SSH KEYS, SUDO AND CRON
+
+COVERING YOUR TRACKS
+  Plan
+    Prior, after, before (know the system)
+      what will happen if I do X (what logging)
+      checks (where are things)
+      hide (file locaitons, names, times)
+    When do you start covering your tracks?
+  NIX-ism
+    unset HISTFILE
+    beware of init system in use
+      (systemv, systemd, updstart, etc)
+        typically going to be systemv
+        determines what commands to use and logging structure
+        figure out with ps -p 1
+    auditing systemv
+      ausearch: pulls from audit.log
+        ausearch -p 22
+        ausearch -m USER_LOGIN -sv no
+        ausearch -ua edwards -ts yesterday -te now -i
+    verify on systemD
+      journalctl _TRANSPORT=audit
+      journal _TRANSPORT=audit | grep 603
+  Logs for covering your tracks:
+    auth.log/secure
+      logins/authentications
+    lastlog
+      ech user's last successful login time
+    btmp
+      bad login attempts
+    sulog
+      usage of SU commands
+    utmp
+      currently logged in users (W command)
+    wtmp
+      permanent record on user on/off
+  best EASY way to clean logs
+    rm -rf /var/log/...
+    echo /dev/null > /var/log/...
+    echo > /var/log/...
+
+  remote logging
+    check for /etc/rsyslog.d/* for newer versions and /etc/rsyslog.conf for older ones
+      grep "IncludeConfig" /etc/rsyslog.conf
