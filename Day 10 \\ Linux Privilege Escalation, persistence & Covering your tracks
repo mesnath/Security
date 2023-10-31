@@ -13,6 +13,8 @@ Privilege Escalation
       lists available commands your user can sudo with
     vulnerable suid/sgid executables
       files that can be executed as if you were the owner or in the owner's group
+      https://gtfobins.github.io/
+        use with `find / -type f -perm /(2,4,6)000 -ls 2>/dev/null` for goated dubs
     id
       groups=10(wheel)
         means you can do a lot
