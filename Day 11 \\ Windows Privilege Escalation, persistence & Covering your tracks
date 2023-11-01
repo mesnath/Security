@@ -58,6 +58,7 @@ have procmon open and capturing
 go to services
 find one to hijack
   if the admin is lazy ty and find one wiht no description that isn't legitimate
+  look at the triggers and actions (focus on actions)
 go to location of that one
 see if you can write to that directory
   try and create a notepad file or try and change the name of what's already there
