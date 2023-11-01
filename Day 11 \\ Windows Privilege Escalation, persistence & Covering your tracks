@@ -39,7 +39,8 @@ microsoft event IDs
 
 
 
-DLL Hijacking
+DLL Hijacking:
+
 have procmon open and capturing
   filter for 
     process name is/contains <name of application you want> (putty.exe)
