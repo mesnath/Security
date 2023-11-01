@@ -1,0 +1,13 @@
+run by system (highest permissions)
+  scheduled tasks 
+    when condition is met (trigger)
+  services 
+    on startup
+  registry
+    hklm\\run
+      on boot
+    hkcu\\run
+      on logon
+
+DACL vs SACL
+  dacl controlls who can access sacl logs shit related to access
