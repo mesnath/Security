@@ -1,6 +1,7 @@
 friendly reminder that 'type' is the windows equiavalent of cat
 
 win+r, mmc, add snapons, task scheduler, even viewer, services
+open regedit and go to the run for hklm and hkcu
 
 run by system (highest permissions)
   scheduled tasks 
