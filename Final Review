@@ -1,5 +1,5 @@
 nmap -v -sT -Pn -T4 -sV <IP>
-nmap -v -sT -Pn -T4 -sV <IP> --sctript=http-enum.nse <IP> -p80
+nmap -v -sT -Pn -T4 -sV <IP> --script=http-enum.nse <IP> -p80
 ../../....../etc/passwd or /etc/hosts
   ^--- directory traversal anytime you see anything similar to "file to read"
 command insertion, sql injection, directory traversal
